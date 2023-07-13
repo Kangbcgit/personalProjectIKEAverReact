@@ -1,0 +1,42 @@
+.Info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+}
+.Info .WrapText {
+  width: 80%;
+  height: 95%;
+  overflow: hidden;
+}
+.Info h2 {
+  font-size: 7.5rem;
+  font-family: kakaoBig;
+  font-weight: 700;
+  margin-bottom: 10rem;
+  /* transform: translateX(-55%); */
+  color: #1B1B1B;
+  /* opacity: 0; */
+}
+.Info h2.active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+.Info .WrapText p {
+  font-size: 3.125rem;
+  font-family: kakaoBig;
+  font-weight: 700;
+  text-align: right;
+  /* transform: translateX(60%); */
+  color: #1B1B1B;
+  /* opacity: 0; */
+}
+.Info .WrapText p.active {
+  transition: opacity 1.5s ease-out, transform 1s ease-out;
+  opacity: 1;
+  /* transform: translateX(0); */
+}

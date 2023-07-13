@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+}
+.inner {
+  width: 1500px;
+}
+.wrap-logo{
+  width: 150px;
+}
+.wrap-logo > img {
+  width: 100%;
+  object-fit: cover;
+}
+/* 더미 */
+.dummy {
+  position: relative;
+  z-index: -11;
+  height: 1000vh;
+  background: #fff;
+  margin-top: 100vh;
+  /* display: none; */
+}
