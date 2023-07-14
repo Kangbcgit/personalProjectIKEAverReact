@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Component, useEffect, useRef, useState } from 'react';
 
-class Main {
+class Main extends Component {
   constructor () {
 
   }
-  function useEffect
+  useEffect () {
+
+  }
 }

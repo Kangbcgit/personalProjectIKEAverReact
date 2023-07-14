@@ -15,6 +15,7 @@
 }
 
 .WrapIdeas {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-auto-rows: 600px;
@@ -23,6 +24,26 @@
   width: 1500px;
   border: 1px solid #000;
   overflow: hidden;
+}
+.moreButton {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0057AD;
+  /* border: 1px solid #000; */
+  width: 486.6666666666667px;
+  height: 100px;
+
+  font-family: kakao;
+  font-size: 3.125rem;
+  font-weight: 700;
+  color: #fff;
 }
 .Dum {
   background: gray;

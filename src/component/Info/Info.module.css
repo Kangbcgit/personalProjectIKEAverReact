@@ -8,6 +8,7 @@
   background: #fff;
 }
 .Info .WrapText {
+  position: relative;
   width: 80%;
   height: 95%;
   overflow: hidden;
@@ -39,4 +40,36 @@
   transition: opacity 1.5s ease-out, transform 1s ease-out;
   opacity: 1;
   /* transform: translateX(0); */
+}
+
+.wrapButtons {
+  position: absolute;
+  bottom: 7.8rem;
+  left: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-areas: 
+                'first .'
+                'second third';
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  font-family: kakaoBig;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.button.first {
+  grid-area: first;
+}
+.button.second {
+  grid-area: second;
+}
+.button.third {
+  grid-area: third;
 }

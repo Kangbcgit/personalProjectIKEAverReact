@@ -1,8 +1,10 @@
-import Header from './component/Header/Header.js';
-import MainBanner from './component/MainBanner/MainBanner.js';
-import Info from './component/Info/Info.js';
-import HomeFunishingIdeas from './component/HomeFunishingIdeas/HomeFunishingIdeas.js';
-import EventBanner from './component/EventBanner/EventBanner.js';
+import Header from './component/Header/Header.jsx';
+import MainBanner from './component/MainBanner/MainBanner.jsx';
+import Info from './component/Info/Info.jsx';
+import HomeFunishingIdeas from './component/HomeFunishingIdeas/HomeFunishingIdeas.jsx';
+import EventBanner from './component/EventBanner/EventBanner.jsx';
+import BestCategori from './component/BestCategori/BestCategori.jsx';
+import StoreLocation from './component/StoreLocation/StoreLocation.jsx';
 function App() {
   return (
     <>
@@ -11,6 +13,8 @@ function App() {
       <Info say='hello'/>
       <HomeFunishingIdeas />
       <EventBanner />
+      <BestCategori />
+      <StoreLocation />
     </>
   );
 }

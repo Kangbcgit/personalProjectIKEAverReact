@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './Info.module.css'
+import react from 'react';
+import styles from './Info.module.css';
 
 const Info = (props) => {
   return (
@@ -10,6 +11,11 @@ const Info = (props) => {
           삶에<br /> 긍정적인
           영향을 미치고자 합니다.
         </p>
+        <div className={styles.wrapButtons}>
+          <a href="#none" className={`${styles.button} ${styles.first}`}>서비스</a>
+          <a href="#none" className={`${styles.button} ${styles.second}`}>브랜드 소개</a>
+          <a href="#none" className={`${styles.button} ${styles.third}`}>IKEA 역사</a>
+        </div>
       </div>
     </section>
   )
