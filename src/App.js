@@ -5,6 +5,7 @@ import HomeFunishingIdeas from './component/HomeFunishingIdeas/HomeFunishingIdea
 import EventBanner from './component/EventBanner/EventBanner.jsx';
 import BestCategori from './component/BestCategori/BestCategori.jsx';
 import StoreLocation from './component/StoreLocation/StoreLocation.jsx';
+import Footer from './component/Footer/Footer.jsx';
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
       <EventBanner />
       <BestCategori />
       <StoreLocation />
+      <Footer />
     </>
   );
 }

@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'kakaoSmall';
+  src: url('./../../public/font/KakaoSmall-Light.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -11,7 +17,8 @@ body {
   position: relative;
 }
 .inner {
-  width: 1500px;
+  width: 100%;
+  max-width: 1500px;
 }
 .wrap-logo{
   width: 150px;
