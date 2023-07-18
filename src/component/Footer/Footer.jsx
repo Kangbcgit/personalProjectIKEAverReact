@@ -31,14 +31,14 @@ const Footer = () => {
           </div>
           <div className={styles.secondBottom}>
             <div className={styles.ikeaFamily}>
-              <div className={styles.title}>IKEA FAMILY</div>
+              <a href='#' className={styles.title}>IKEA FAMILY</a>
               <div className={styles.desc}>
                 지금 IKEA Family에 무료로 가입하고<br/>
                 다양한 멤버 전용 혜택을 누리세요.
               </div>
             </div>
             <div className={styles.ikeaBusiness}>
-              <div className={styles.title}>IKEA Business Network</div>
+              <a href='#' className={styles.title}>IKEA Business Network</a>
               <div className={styles.desc}>
                 여러분의 더 나은 비즈니스 환경을 위한<br/>
                 다양한 혜택들을 받으세요.

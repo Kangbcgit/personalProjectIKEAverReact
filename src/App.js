@@ -6,10 +6,14 @@ import EventBanner from './component/EventBanner/EventBanner.jsx';
 import BestCategori from './component/BestCategori/BestCategori.jsx';
 import StoreLocation from './component/StoreLocation/StoreLocation.jsx';
 import Footer from './component/Footer/Footer.jsx';
-function App() {
+import { Component } from 'react';
+import { useState } from 'react';
+const App = () => {
+  const [subStatus, setSubStatus] = useState();
+
   return (
     <>
-      <Header />
+      <Header subStatus={subStatus} setSubStatus={setSubStatus} />
       <MainBanner />
       <Info say='hello'/>
       <HomeFunishingIdeas />

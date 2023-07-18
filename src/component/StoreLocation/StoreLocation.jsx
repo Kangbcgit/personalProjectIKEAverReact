@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './StoreLocation.module.css'
+import styles from './StoreLocation.module.css';
 
 const StoreLocation = () => {
   return (
