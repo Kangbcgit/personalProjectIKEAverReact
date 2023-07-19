@@ -9,7 +9,7 @@ import Footer from './component/Footer/Footer.jsx';
 import { Component } from 'react';
 import { useState } from 'react';
 const App = () => {
-  const [subStatus, setSubStatus] = useState();
+  const [subStatus, setSubStatus] = useState(false);
 
   return (
     <>

@@ -16,17 +16,29 @@ header {
   color: #fff;
 }
 .wrapGnb {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 40%;
+  height: 100%;
+}
+.wrapGnb > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .subMenu {
   position: absolute;
   top: 100%;
   width: 100%;
+  display: grid;
+  grid-template-areas: 
+                  'first second third . . .';
+  overflow: hidden;
   height: 100vh;
   max-height: 0;
-  /* background: #fff; */
+  background: #00000010;
   overflow: hidden;
   transition: .5s ease-in-out;
 }
@@ -34,7 +46,16 @@ header {
   max-height: 20vh;
 }
 .subMenu > div {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #000;
+  display: flex;
+  flex-flow: column;
+}
+.subMenu .first {
+  grid-area: first;
+  border: 1px solid rgb(120, 0, 255);
+}
+.subMenu .second {
+  grid-area: second;
+}
+.subMenu .third {
+  grid-area: third;
 }
