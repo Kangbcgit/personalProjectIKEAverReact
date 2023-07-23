@@ -1,0 +1,310 @@
+header {
+  @mixin headerHover {
+    content: '';
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 5px;
+    border-radius: 100px;
+
+    background: #1E1E21;
+
+    transition: width .3s;
+  }
+
+  &.active {
+    border-bottom: 1px solid #b6b6b6;
+
+    background: #fff;
+    color: #1E1E21;
+  }
+  &.hide {
+    top: -90px;
+  }
+  &.unHide {
+    top: 0;
+  }
+
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 90px;
+
+  color: #fff;
+
+  transition: .3s;
+
+  .headerInner {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 1700px;
+
+    color: inherit;
+  }
+
+  .wrapLogo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 3rem;
+    font-family: Helvetica;
+    font-weight: 900;
+
+    transition: color .3s;
+  }
+
+  .wrapGnb {
+    position: relative;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    width: 30%;
+    height: 100%;
+
+    font-family: kakaoSmall;
+    font-weight: 700;
+
+    transition: color .3s;
+
+    >div {
+      position: relative;
+      height: 100%;
+      max-height: 90px;
+
+      &::before {
+        @include headerHover();
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+      &.active {
+        .subMenu {
+          pointer-events: auto;
+          opacity: 1;
+          transition: .3s ease-in-out;
+        }
+      }
+    }
+
+    //문제 생기면 여기 봐야함. gnb
+    >a,
+    >div>a {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 100%;
+
+      &::before {
+        @include headerHover();
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+
+    .subMenu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: start;
+      align-items: start;
+
+      width: 200px;
+      border-top: 1px solid #b6b6b6;
+
+      font-family: kakaoBig;
+      font-weight: bold;
+      font-size: 1.05rem;
+
+      background: #fff;
+
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
+      box-shadow: 0 15px 30px -4px rgba(0, 0, 0, 0.098);
+
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        height: 40px;
+        width: 100%;
+        margin-left: 10px;
+
+        color: #1E1E21;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -7px;
+          top: 50%;
+          transform: translateY(-50%);
+
+          width: 5px;
+          height: 0;
+          border-radius: 100px;
+
+          background: #000;
+
+          transition: .2s;
+        }
+
+        &:hover::before {
+          height: 60%;
+        }
+      }
+    }
+  }
+
+  .wrapSideIcons {
+    display: flex;
+    gap: 15px;
+    width: fit-content;
+    transition: .3s;
+
+    a {
+      position: relative;
+      display: block;
+    }
+
+    >a {
+      &::before {
+        @include headerHover();
+        bottom: 0;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+
+    form {
+      position: absolute;
+      right: 130px;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 0;
+      overflow: hidden;
+
+      &.active {
+        max-width: calc(1700px / 5);
+        transition: .4s;
+      }
+
+      input {
+        display: block;
+        width: calc(1700px / 5);
+        border: 1px solid #000;
+        border-radius: 25px;
+        height: 50px;
+        padding: 20px;
+        background: #edeefc;
+        border: 1px solid #d4d9df;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    .headerInner {
+      .burger {
+        position: relative;
+        margin-left: 20px;
+        font-size: 2rem;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        transition: rotate .3s;
+        &.active {
+          rotate: 90deg;
+        }
+
+        > i {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &::before {
+          content: '';
+          display: none;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 100%;
+          height: 100%;
+
+          border: 1px solid #949494;
+
+          opacity: 0;
+          animation: burgerHover 1.5s 0s infinite;
+        }
+        &::after {
+          content: '';
+          display: none;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 100%;
+          height: 100%;
+          border: 1px solid #949494;
+
+          opacity: 0;
+          animation: burgerHover 1.5s .3s infinite;
+        }
+        &:hover::before,
+        &:hover::after {
+          display: block;
+        }
+        @keyframes burgerHover {
+          from {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+          }
+          to {
+            width: 250%;
+            height: 250%;
+            opacity: 0;
+          }
+        }
+      }
+      .wrapGnb {
+        display: none;
+      }
+      .wrapSideIcons {
+        margin-right: 20px;
+      }
+    }
+  }
+}

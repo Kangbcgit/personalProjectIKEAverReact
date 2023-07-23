@@ -10,11 +10,16 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Helvetica';
+  src: url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+}
 html {
   scroll-behavior: smooth;
 }
 body {
   position: relative;
+  background: #000;
 }
 .inner {
   width: 100%;
@@ -26,13 +31,4 @@ body {
 .wrap-logo > img {
   width: 100%;
   object-fit: cover;
-}
-/* 더미 */
-.dummy {
-  position: relative;
-  z-index: -11;
-  height: 1000vh;
-  background: #fff;
-  margin-top: 100vh;
-  /* display: none; */
 }
