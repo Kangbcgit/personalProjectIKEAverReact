@@ -160,3 +160,16 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .homeFunishingIdeas {
+    .wrapIdeas {
+      width: 60%;
+      grid-template-columns: repeat(1, 1fr);
+      .item:nth-child(3n - 1) {
+        transform: none;
+        top: 0;
+      }
+    }
+  }
+}

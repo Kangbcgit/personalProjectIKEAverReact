@@ -82,3 +82,18 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .info {
+    .wrapText {
+      h2 {
+        font-size: 5rem;
+        margin-bottom: 5rem;
+      }
+      p {
+        font-size: 1.75rem;
+        line-height: 2;
+      }
+    }
+  }
+}
