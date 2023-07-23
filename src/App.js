@@ -9,14 +9,7 @@ import Footer from './component/Footer/Footer.jsx';
 function App() {
   return (
     <>
-      <Header />
-      <MainBanner />
-      <Info say='hello'/>
-      <HomeFunishingIdeas />
-      <EventBanner />
-      <BestCategori />
-      <StoreLocation />
-      <Footer />
+    
     </>
   );
 }
