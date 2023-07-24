@@ -1,5 +1,4 @@
 .storeLocation {
-  height: 1300px;
   background: #fff;
   padding: 100px 0;
   
@@ -7,7 +6,7 @@
     display: flex;
     flex-flow: column;
     margin: 0 auto;
-    width: 1500px;
+    max-width: 1500px;
 
     h3 {
       text-align: center;
@@ -37,6 +36,20 @@
         &:hover {
           scale: 1.2;
         }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .storeLocation {
+    .wrapItems {
+      grid-template-columns: repeat(1, 80vw);
+      gap: 30px;
+      grid-auto-rows: calc((100vh - 30px) / 4);
+      justify-content: center;
+      
+      .item {
+        border-radius: 25px;
       }
     }
   }

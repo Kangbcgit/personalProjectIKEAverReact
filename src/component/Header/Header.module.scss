@@ -53,7 +53,7 @@ header {
 
     color: inherit;
 
-    .burger {
+    .responsive {
       display: none;
     }
     .wrapLogo {
@@ -145,7 +145,7 @@ header {
   
         opacity: 0;
         pointer-events: none;
-        overflow: hidden;
+        overflow: auto;
         box-shadow: 0 15px 30px -4px rgba(0, 0, 0, 0.098);
   
         a {
@@ -238,17 +238,65 @@ header {
 @media (max-width: 768px) {
   header {
     .headerInner {
-      .burger {
+      .responsive {
+        display: block;
+
+        .burger {
         position: relative;
         margin-left: 20px;
-        display: block;
         font-size: 2rem;
         width: 25px;
         height: 25px;
         cursor: pointer;
         transition: rotate .3s;
+        &+.burgerMenu {
+          position: fixed;
+          left: -100%;
+          top: 90px;
+          width: calc(100vw - 17px);
+          height: fit-content;
+          min-height: calc(100vh - 90px);
+
+          background: #fff;
+          border: 1px solid #000;
+
+          transform: rotate(22.5deg);
+          transform-origin:0 0;
+          opacity: 0;
+          pointer-events: none;
+          transition: .3s ease-in-out;
+          overflow: auto;
+          &>a {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            height: calc((100vh - 90px) / 5);
+            border: 1px solid #000;
+            &+ .accordion {
+              display: grid;
+              grid-auto-rows: 10vh;
+              border: 1px solid red;
+              width: 100%;
+              >a {
+                display: flex;
+                align-items: center;
+                
+                width: 100%;
+                height: 80px;
+                border: 1px solid #000;
+              }
+            }
+          }
+        }
         &.active {
-          rotate: 90deg;
+          rotate: -90deg;
+          &+.burgerMenu {
+            left: 0;
+            opacity: 1;
+            pointer-events: auto;
+            transform: rotate(0deg);
+          }
         }
 
         > i {
@@ -305,11 +353,14 @@ header {
           }
         }
       }
+      }
+      
       .wrapGnb {
         display: none;
       }
       .wrapSideIcons {
-        margin-right: 20px;
+        margin-right: 10px;
+        gap: 7.5px;
       }
     }
   }

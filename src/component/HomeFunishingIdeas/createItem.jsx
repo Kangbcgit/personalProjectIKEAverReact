@@ -4,23 +4,35 @@ class CreateItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeStatus: false
+      activeStatus: false,
+      isHoverSpotOn: false,
     }
   }
 
   on () {
-    this.setState({activeStatus: true})
+    this.setState({activeStatus: true});
   }
   off () {
-    this.setState({activeStatus: false})
+    this.setState({activeStatus: false});
+  }
+  spotHover = () => {
+    this.setState({isHoverSpotOn: true});
+  }
+  spotLeave = () => {
+    this.setState({isHoverSpotOn: false});
   }
 
   render() {
     return (
-      <a href="#none" className={`${this.props.item} ${this.state.activeStatus ? this.props.active : ''}`} onMouseOver={e => this.on()} onMouseLeave={e => this.off()}>
+      <a href="#none" className={`${this.props.item} ${this.state.activeStatus || this.props.isResizeOn ? this.props.active : ''}`} onMouseOver={e => this.on()} onMouseLeave={e => this.off()}>
         <img src={this.props.src} />
-        <div className={this.props.spotInfo} style={{top: `${this.props.top}%`, left: `${this.props.left}%`}}>
+        <div className={`${this.props.spotInfo} ${this.state.isHoverSpotOn ? this.props.active : ''}`} style={{top: `${this.props.top}%`, left: `${this.props.left}%`}} onMouseOver={() => this.spotHover()} onMouseLeave={() => this.spotLeave()}>
           <i className="fa fa-plus"></i>
+        </div>
+        <div className={this.props.itemInfo} style={{top: `calc(${this.props.top}% + 30px)`, left: `calc(${this.props.left}% + 15px)`}}>
+          <h4>상품 이름입니다.</h4>
+          <hr />
+          <p>상품의 설명 공간입니다.</p>
         </div>
       </a>
     );

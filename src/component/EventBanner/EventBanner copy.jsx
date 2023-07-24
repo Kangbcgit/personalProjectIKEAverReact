@@ -73,18 +73,16 @@ export default class EventBanner extends Component {
           <img src={this.srcCommonImg()} alt="" />
         </a>
         <div className={styles.wrapText}>
-          <div className={styles.top}>
-            <h3>{this.state.textData[`text${this.state.imgNum}`].h3}</h3>
-            <p>{this.state.textData[`text${this.state.imgNum}`].p}</p>
-          </div>
-          <div className={styles.wrapProgressBar}>
-            <div className={styles.progressBackground}>
-              <div className={styles.currentProgress} style={{width: this.progressChanger()}}></div>
-            </div>
-            <div className={styles.wrapPauseButton} onClick={() => this.pauseControll()}>
-              <img src={`${!this.state.pause ? './img/icon/pause.svg' : './img/icon/play.svg'}`} alt="pause icon" />
-          </div>
+          <h3>{this.state.textData[`text${this.state.imgNum}`].h3}</h3>
+          <p>{this.state.textData[`text${this.state.imgNum}`].p}</p>
         </div>
+        <div className={styles.wrapProgressBar}>
+          <div className={styles.progressBackground}>
+            <div className={styles.currentProgress} style={{width: this.progressChanger()}}></div>
+          </div>
+          <div className={styles.wrapPauseButton} onClick={() => this.pauseControll()}>
+            <img src={`${!this.state.pause ? './img/icon/pause.svg' : './img/icon/play.svg'}`} alt="pause icon" />
+          </div>
         </div>
         <div className={styles.wrapImg}>
           <img src={this.srcCommonImg()} alt="eventImg" />

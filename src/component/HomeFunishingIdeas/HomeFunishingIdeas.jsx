@@ -7,10 +7,12 @@ class HomeFunishingIdeas extends Component {
     super(props);
     this.state = {
        items: [],
-       position: []
+       position: [],
+       isResizeOn: false,
     }
   }
   componentDidMount () {
+    window.addEventListener('resize', this.resizeEvent);
     const newItems = [],
           newPosition = [];
     for (let i = 1; i <= 12; i++) {
@@ -32,10 +34,21 @@ class HomeFunishingIdeas extends Component {
     newPosition.push({top: 86, left: 55})
     this.setState({items: newItems, position: newPosition})
   }
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.resizeEvent)
+  }
+
+  resizeEvent = () => {
+    if (window.innerWidth <= 768) {
+      this.setState({isResizeOn: true});
+    } else {
+      this.setState({isResizeOn: false})
+    }
+  }
 
   renderItem () {
     return this.state.items.map((item, index) => (
-      <CreateItem key={index} src={item.src} item={styles.item} active={styles.active} spotInfo={styles.spotInfo} top={this.state.position[index].top} left={this.state.position[index].left}/>
+      <CreateItem key={index} src={item.src} item={styles.item} itemInfo={styles.itemInfo} active={styles.active} spotInfo={styles.spotInfo} top={this.state.position[index].top} left={this.state.position[index].left} isResizeOn={this.state.isResizeOn}/>
     ));
   }
   render () {

@@ -5,6 +5,7 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
+  // min-height: 969px;
   background: #fff;
 
   .wrapText {
@@ -45,54 +46,72 @@
     }
     .wrapButtons {
       position: absolute;
-      bottom: 7.8rem;
+      bottom: 30%;
       left: 0;
       display: grid;
       gap: 1.25rem;
       grid-template-areas: 
                     'first .'
                     'second third';
+      grid-template-columns: repeat(1, 200px);
 
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 200px;
-      height: 100px;
-      border-radius: 20px;
-      background: #0057AD;
-      color: #fff;
-      font-family: kakaoBig;
-      font-size: 2rem;
-      font-weight: bold;
-      transition: .15s;
-      &:hover {
-        background: #006dda;
+      width: 100%;
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 100px;
+        border-radius: 20px;
+        background: #0057AD;
+        color: #fff;
+        font-family: kakaoBig;
+        font-size: 2rem;
+        font-weight: bold;
+        transition: .15s;
+        &:hover {
+          background: #006dda;
+        }
+        &.first {
+          grid-area: first;
+        }
+        &.second {
+          grid-area: second;
+        }
+        &.third {
+          grid-area: third;
+        }
       }
-      &.first {
-        grid-area: first;
-      }
-      &.second {
-        grid-area: second;
-      }
-      &.third {
-        grid-area: third;
-      }
-    }
     }
   }
 }
 
 @media (max-width: 768px) {
   .info {
+    min-height: 969px;
     .wrapText {
       h2 {
-        font-size: 5rem;
+        font-size: 4rem;
         margin-bottom: 5rem;
+        text-align: center;
       }
       p {
         font-size: 1.75rem;
         line-height: 2;
+        text-align: center;
+      }
+      .wrapButtons {
+        left: 50%;
+        transform: translateX(-50%);
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: 'first second third';
+
+        .button {
+          height: 75px;
+          width: 100%;
+
+          font-size: 1.2rem;
+        }
       }
     }
   }

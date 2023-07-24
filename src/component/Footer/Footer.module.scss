@@ -9,7 +9,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, auto);
     column-gap: 400px;
-    width: 1500px;
+    max-width: 1500px;
     margin: 0 auto;
 
     // floor, title, desc common styles
@@ -71,6 +71,36 @@ footer {
       .secondBottom {
         display: grid;
         grid-template-columns: repeat(2, auto);
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 0;
+    .wrapper {
+      grid-template-columns: repeat(1, auto);
+      column-gap: 400px;
+      grid-template-rows: repeat(2, auto);
+      justify-content: center;
+      .firstFloor {
+        font-size: .75rem;
+      }
+      .first {
+        .firstBottom {
+          font-size: .75rem;
+          form {
+            bottom: 70%;
+          }
+        }
+      }
+      .second {
+        .desc {
+          font-size: .75rem;
+        }
+        .title {
+          font-size: 1.2rem;
+        }
       }
     }
   }
