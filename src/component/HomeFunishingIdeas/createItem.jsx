@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class CreateItem extends Component {
   constructor(props) {
@@ -6,30 +6,52 @@ class CreateItem extends Component {
     this.state = {
       activeStatus: false,
       isHoverSpotOn: false,
-    }
+    };
   }
 
-  on () {
-    this.setState({activeStatus: true});
+  on() {
+    this.setState({ activeStatus: true });
   }
-  off () {
-    this.setState({activeStatus: false});
+  off() {
+    this.setState({ activeStatus: false });
   }
   spotHover = () => {
-    this.setState({isHoverSpotOn: true});
-  }
+    this.setState({ isHoverSpotOn: true });
+  };
   spotLeave = () => {
-    this.setState({isHoverSpotOn: false});
-  }
+    this.setState({ isHoverSpotOn: false });
+  };
 
   render() {
     return (
-      <a href="#none" className={`${this.props.item} ${this.state.activeStatus || this.props.isResizeOn ? this.props.active : ''}`} onMouseOver={e => this.on()} onMouseLeave={e => this.off()}>
+      <a
+        href="#none"
+        className={`${this.props.item} ${
+          this.state.activeStatus || this.props.isResizeOn
+            ? this.props.active
+            : ""
+        }`}
+        onMouseOver={(e) => this.on()}
+        onMouseLeave={(e) => this.off()}
+      >
         <img src={this.props.src} />
-        <div className={`${this.props.spotInfo} ${this.state.isHoverSpotOn ? this.props.active : ''}`} style={{top: `${this.props.top}%`, left: `${this.props.left}%`}} onMouseOver={() => this.spotHover()} onMouseLeave={() => this.spotLeave()}>
+        <div
+          className={`${this.props.spotInfo} ${
+            this.state.isHoverSpotOn ? this.props.active : ""
+          }`}
+          style={{ top: `${this.props.top}%`, left: `${this.props.left}%` }}
+          onMouseOver={() => this.spotHover()}
+          onMouseLeave={() => this.spotLeave()}
+        >
           <i className="fa fa-plus"></i>
         </div>
-        <div className={this.props.itemInfo} style={{top: `calc(${this.props.top}% + 30px)`, left: `calc(${this.props.left}% + 15px)`}}>
+        <div
+          className={this.props.itemInfo}
+          style={{
+            top: `calc(${this.props.top}% + 30px)`,
+            left: `calc(${this.props.left}% + 15px)`,
+          }}
+        >
           <h4>상품 이름입니다.</h4>
           <hr />
           <p>상품의 설명 공간입니다.</p>
@@ -39,4 +61,4 @@ class CreateItem extends Component {
   }
 }
 
-export default CreateItem
+export default CreateItem;

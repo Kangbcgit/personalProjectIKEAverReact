@@ -189,13 +189,13 @@
       font-size: 3rem;
     }
     .wrapIdeas {
-      width: 70%;
-      grid-template-columns: repeat(1, 1fr);
-      grid-auto-rows: 500px;
+      width: 90%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 400px;
       .item:nth-child(3n - 1) {
         transform: none;
         top: 0;
       }
     }
   }
-}
+} 
