@@ -1,0 +1,91 @@
+@mixin centerXY {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper {
+  display: flex;
+  width: 100vw;
+  max-width: 1903px;
+  height: 100vh;
+  font-family: kakaoBig;
+  background: #FAEC7E;
+  
+  >div {
+    width: 100%;
+    height: 100%;
+
+    &.left {
+      position: relative;
+      .wrapBox {
+        @include centerXY;
+        width: 579px;
+        height: 633px;
+
+        >div {
+          position: absolute;
+          border: 1px solid #000;
+          border-radius: 25px;
+          &.box1 {
+            @include centerXY;
+            
+            width: 320px;
+            height: 450px;
+          }
+          &.box2 {
+            left: 0;
+            top: 150px;
+            width: 207px;
+            height: 300px;
+          }
+          &.box3 {
+            right: 22px;
+            top: 0;
+            width: 207px;
+            height: 300px;
+          }
+          &.box4 {
+            right: 0;
+            bottom: 0;
+            width: 207px;
+            height: 280px;
+          }
+        }
+      }
+    }
+    &.right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .wrapText {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        >h3 {
+          font-size: 70px;
+        }
+        >p {
+          width: 405px;
+          text-align: center;
+          font-size: 30px;
+        }
+        >.button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 50px;
+          border-radius: 25px;
+          font-size: 1rem;
+          color: #fff;
+          background: #0057AD;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

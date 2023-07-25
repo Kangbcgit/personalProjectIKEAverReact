@@ -14,6 +14,7 @@ class Header extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     window.addEventListener('wheel', this.handleHide);
+    this.headerOn();
   }
 
   componentWillUnmount() {
@@ -45,7 +46,7 @@ class Header extends Component {
   };
 
   headerOff = () => {
-    if (!(window.scrollY >= 90)) {
+    if (!(window.scrollY) >= 90 && this.props.sub !== true) {
       this.setState({ isHeaderActive: false });
     }
   };

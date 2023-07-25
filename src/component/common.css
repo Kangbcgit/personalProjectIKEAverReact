@@ -19,7 +19,7 @@ html {
 }
 body {
   position: relative;
-  background: #000;
+  /* background: #000; */
 }
 .inner {
   width: 100%;

@@ -1,0 +1,101 @@
+@mixin centerXY {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  max-width: 1903px;
+  height: 100vh;
+  >div {
+    width: 100%;
+    height: 100%;
+    &.left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .wrapText {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-family: kakaoBig;
+        >h3 {
+          font-size: 70px;
+          color: #0057AD;
+          width: 70%;
+          text-align: center;
+        }
+        >p {
+          width: 405px;
+          text-align: center;
+          font-size: 30px;
+        }
+        >.button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 50px;
+          border-radius: 25px;
+          font-size: 1rem;
+          color: #fff;
+          background: #0057AD;
+          cursor: pointer;
+        }
+      }
+    }
+    &.right {
+      position: relative;
+      .wrapBox {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 709px;
+        height: 761px;
+        >div {
+          position: absolute;
+          border: 1px solid #000;
+          border-radius: 25px;
+          &.box1 {
+            left: 0;
+            top: 0;
+
+            width: 400px;
+            height: 400px;
+          }
+          &.box2 {
+            right: 0;
+            top: 0;
+            width: 237px;
+            height: 237px;
+          }
+          &.box3 {
+            right: 78px;
+            top: 284px;
+            width: 187px;
+            height: 187px;
+          }
+          &.box4 {
+            right: 22px;
+            bottom: 0;
+            width: 243px;
+            height: 243px;
+          }
+          &.box5 {
+            width: 243px;
+            height: 243px;
+            left: 134px;
+            bottom: 83px;
+          }
+        }
+      }
+    }
+  }
+}
