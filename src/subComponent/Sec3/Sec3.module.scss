@@ -29,7 +29,7 @@
         font-family: kakaoBig;
 
         >h3 {
-          font-size: 70px;
+          font-size: clamp(50px, 3.6458vw, 70px);
           color: #0057AD;
           width: 70%;
           text-align: center;
@@ -129,7 +129,6 @@
 
         .wrapText {
           >h3 {
-            font-size: 50px;
             font-weight: 600;
             font-family: kakaoSmall;
           }

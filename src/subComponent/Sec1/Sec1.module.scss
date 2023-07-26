@@ -138,9 +138,18 @@
     color: #fff;
     font-size: 3rem;
     cursor: pointer;
+    animation: angleUpDownInfinite .5s infinite ease-in-out alternate;
     &:hover {
       background: #006dda;
       transition: .2s;
+    }
+    @keyframes angleUpDownInfinite {
+      from {
+        transform: translateY(-10%);
+      }
+      to {
+        transform: translateY((10%));
+      }
     }
   }
 }

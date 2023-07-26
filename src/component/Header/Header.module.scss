@@ -55,6 +55,118 @@ header {
 
     .responsive {
       display: none;
+      .burger {
+        position: relative;
+        margin-left: 20px;
+        font-size: 2rem;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        transition: rotate .3s;
+        &+.burgerMenu {
+          position: fixed;
+          left: -100%;
+          top: 90px;
+          width: calc(100vw - 17px);
+          height: fit-content;
+          min-height: calc(100vh - 90px);
+
+          background: #fff;
+          border: 1px solid #000;
+
+          transform: rotate(22.5deg);
+          transform-origin:0 0;
+          opacity: 0;
+          pointer-events: none;
+          transition: .3s ease-in-out;
+          overflow: auto;
+          &>a {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            height: calc((100vh - 90px) / 5);
+            border: 1px solid #000;
+            &+ .accordion {
+              display: grid;
+              grid-auto-rows: 10vh;
+              border: 1px solid red;
+              width: 100%;
+              >a {
+                display: flex;
+                align-items: center;
+                
+                width: 100%;
+                height: 80px;
+                border: 1px solid #000;
+              }
+            }
+          }
+        }
+        &.active {
+          rotate: -90deg;
+          &+.burgerMenu {
+            left: 0;
+            opacity: 1;
+            pointer-events: auto;
+            transform: rotate(0deg);
+          }
+        }
+
+        > i {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &::before {
+          content: '';
+          display: none;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 100%;
+          height: 100%;
+
+          border: 1px solid #949494;
+
+          opacity: 0;
+          animation: burgerHover 1.5s 0s infinite;
+        }
+        &::after {
+          content: '';
+          display: none;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 100%;
+          height: 100%;
+          border: 1px solid #949494;
+
+          opacity: 0;
+          animation: burgerHover 1.5s .3s infinite;
+        }
+        &:hover::before,
+        &:hover::after {
+          display: block;
+        }
+        @keyframes burgerHover {
+          from {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+          }
+          to {
+            width: 250%;
+            height: 250%;
+            opacity: 0;
+          }
+        }
+      }
     }
     .wrapLogo {
       position: absolute;
@@ -76,7 +188,7 @@ header {
       justify-content: space-between;
       align-items: center;
   
-      width: 30%;
+      width: max(30%, 510px);
       height: 100%;
   
       font-family: kakaoSmall;
@@ -239,119 +351,6 @@ header {
     .headerInner {
       .responsive {
         display: block;
-
-        .burger {
-        position: relative;
-        margin-left: 20px;
-        font-size: 2rem;
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-        transition: rotate .3s;
-        &+.burgerMenu {
-          position: fixed;
-          left: -100%;
-          top: 90px;
-          width: calc(100vw - 17px);
-          height: fit-content;
-          min-height: calc(100vh - 90px);
-
-          background: #fff;
-          border: 1px solid #000;
-
-          transform: rotate(22.5deg);
-          transform-origin:0 0;
-          opacity: 0;
-          pointer-events: none;
-          transition: .3s ease-in-out;
-          overflow: auto;
-          &>a {
-            display: flex;
-            align-items: center;
-
-            width: 100%;
-            height: calc((100vh - 90px) / 5);
-            border: 1px solid #000;
-            &+ .accordion {
-              display: grid;
-              grid-auto-rows: 10vh;
-              border: 1px solid red;
-              width: 100%;
-              >a {
-                display: flex;
-                align-items: center;
-                
-                width: 100%;
-                height: 80px;
-                border: 1px solid #000;
-              }
-            }
-          }
-        }
-        &.active {
-          rotate: -90deg;
-          &+.burgerMenu {
-            left: 0;
-            opacity: 1;
-            pointer-events: auto;
-            transform: rotate(0deg);
-          }
-        }
-
-        > i {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
-        &::before {
-          content: '';
-          display: none;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-
-          width: 100%;
-          height: 100%;
-
-          border: 1px solid #949494;
-
-          opacity: 0;
-          animation: burgerHover 1.5s 0s infinite;
-        }
-        &::after {
-          content: '';
-          display: none;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-
-          width: 100%;
-          height: 100%;
-          border: 1px solid #949494;
-
-          opacity: 0;
-          animation: burgerHover 1.5s .3s infinite;
-        }
-        &:hover::before,
-        &:hover::after {
-          display: block;
-        }
-        @keyframes burgerHover {
-          from {
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-          }
-          to {
-            width: 250%;
-            height: 250%;
-            opacity: 0;
-          }
-        }
-      }
       }
       
       .wrapGnb {
@@ -362,5 +361,17 @@ header {
         gap: 7.5px;
       }
     }
+  }
+}
+@media (max-width:1200px) {
+  header {
+    .headerInner {
+      .wrapGnb {
+        display: none;
+      }
+      .responsive {
+        display: block;
+      }
+      }
   }
 }

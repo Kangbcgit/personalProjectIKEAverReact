@@ -19,7 +19,7 @@
       font-size: 7.5rem;
       font-family: kakaoBig;
       font-weight: 700;
-      margin-bottom: 10rem;
+      margin-bottom: clamp(100px, 8.333vw, 160px);
       /* transform: translateX(-55%); */
       color: #1B1B1B;
       /* opacity: 0; */
@@ -31,7 +31,7 @@
     }
 
     p {
-      font-size: 3.125rem;
+      font-size: clamp(32px, 2.6042vw, 50px);
       font-family: kakaoBig;
       font-weight: 700;
       text-align: right;
@@ -94,17 +94,24 @@
         font-size: 4rem;
         margin-bottom: 5rem;
         text-align: center;
+        font-family: kakaoSmall;
+        font-weight: 600;
       }
       p {
-        font-size: 1.75rem;
+        font-size: 2rem;
         line-height: 2;
+        font-family: kakaoBig;
+        font-weight: 900;
         text-align: center;
       }
       .wrapButtons {
         left: 50%;
+        bottom: 10%;
         transform: translateX(-50%);
         grid-template-columns: repeat(3,1fr);
-        grid-template-areas: 'first second third';
+        grid-template-areas: 'first . third'
+                              '. second .'
+                              '. . .';
 
         .button {
           height: 75px;
