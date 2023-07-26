@@ -18,11 +18,16 @@ export default class Sec3 extends Component {
         </div>
         <div className={styles.right}>
           <div className={styles.wrapBox}>
-            <div className={styles.box5}></div>
-            <div className={styles.box4}></div>
-            <div className={styles.box3}></div>
-            <div className={styles.box2}></div>
-            <div className={styles.box1}></div>
+            <div className={styles.box5}>
+              <img src="./img/subPage/subMain5.jpg" alt="" /></div>
+            <div className={styles.box4}>
+              <img src="./img/subPage/subMain6.jpg" alt="" /></div>
+            <div className={styles.box3}>
+              <img src="./img/subPage/subMain7.jpg" alt="" /></div>
+            <div className={styles.box2}>
+              <img src="./img/subPage/subMain8.jpg" alt="" /></div>
+            <div className={styles.box1}>
+              <img src="./img/subPage/subMain9.jpg" alt="" /></div>
           </div>
         </div>
       </div>

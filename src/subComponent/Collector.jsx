@@ -32,11 +32,17 @@ export default class Collector extends Component {
   transformPages = (e) => {
     let subMenu = document.querySelector(`.${styles.subMenu}`).firstElementChild;
     if (e.deltaY > 0 && this.state.currentY >= -200) {
-      this.setState((prevState) => ({ currentY: prevState.currentY - 100 }));
+      this.minusCurrentY();
     } else if (e.deltaY <0 && this.state.currentY <= -100) {
-      this.setState((prevState) => ({ currentY: prevState.currentY + 100 }));
+      this.plusCurrentY();
     }
   };
+  minusCurrentY = () => {
+    this.setState((prevState) => ({ currentY: prevState.currentY - 100 }));
+  }
+  plusCurrentY = () => {
+    this.setState((prevState) => ({ currentY: prevState.currentY + 100 }));
+  }
 
   componentDidUpdate(prevProps, prevState) {
     let subMenu = document.querySelector(`.${styles.subMenu}`).firstElementChild;
@@ -50,7 +56,7 @@ export default class Collector extends Component {
       <div className={styles.subMenu}>
         <div className={styles.wrap}>
           <Header sub={true}/>
-          <Sec1 />
+          <Sec1 minusCurrentY={this.minusCurrentY}/>
           <Sec2 />
           <Sec3 />
           <Sec4 />

@@ -34,7 +34,7 @@ class CreateItem extends Component {
         onMouseOver={(e) => this.on()}
         onMouseLeave={(e) => this.off()}
       >
-        <img src={this.props.src} />
+        <img src={this.props.src}/>
         <div
           className={`${this.props.spotInfo} ${
             this.state.isHoverSpotOn ? this.props.active : ""

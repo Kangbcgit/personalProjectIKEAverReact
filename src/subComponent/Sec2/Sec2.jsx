@@ -7,10 +7,18 @@ export default class Sec2 extends Component {
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <div className={styles.wrapBox}>
-            <div className={styles.box4}></div>
-            <div className={styles.box3}></div>
-            <div className={styles.box2}></div>
-            <div className={styles.box1}></div>
+            <div className={styles.box4}>
+              <img src="./img/subPage/subMain1.jpg" alt="" />
+            </div>
+            <div className={styles.box3}>
+              <img src="./img/subPage/subMain2.jpg" alt="" />
+            </div>
+            <div className={styles.box2}>
+              <img src="./img/subPage/subMain3.jpg" alt="" />
+            </div>
+            <div className={styles.box1}>
+              <img src="./img/subPage/subMain4.jpg" alt="" />
+            </div>
           </div>
         </div>
         <div className={styles.right}>

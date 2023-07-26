@@ -7,7 +7,7 @@ export default class Sec4 extends Component {
       <div className={styles.wrapper}>
         <div className={styles.left}>
           <div className={styles.wrapImg}>
-            <img src="./img/subPage/subImg1.jpg" alt="family photo" />
+            <img src="./img/subPage/subMain.jpg" alt="family photo" />
           </div>
         </div>
         <div className={styles.right}>

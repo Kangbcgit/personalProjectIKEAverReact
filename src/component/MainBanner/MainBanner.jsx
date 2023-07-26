@@ -12,11 +12,10 @@ class MainBanner extends Component {
 
   componentDidMount() {
     this.intervalId = setInterval(() => {
-      // 예시로 count 값을 1씩 증가
       this.setState(prevState => ({
         count: prevState.count + 1
       }));
-    }, 3000); // 1초마다 실행되도록 설정
+    }, 3000);
     window.addEventListener('scroll', this.videoHandle);
   }
 
@@ -25,7 +24,6 @@ class MainBanner extends Component {
     window.removeEventListener('scroll', this.videoHandle);
   }
   componentDidUpdate(prevProps, prevState) {
-    // count 값이 4일 경우 1로 돌아가도록 설정합니다.
     if (this.state.count > 4) {
       this.setState({ count: 1 });
     }

@@ -6,11 +6,7 @@ import HomeFunishingIdeas from './component/HomeFunishingIdeas/HomeFunishingIdea
 import EventBanner from './component/EventBanner/EventBanner.jsx';
 import StoreLocation from './component/StoreLocation/StoreLocation.jsx';
 import Footer from './component/Footer/Footer.jsx';
-import Sec1 from './subComponent/Sec1/Sec1.jsx';
 import { Component } from 'react';
-import Sec2 from './subComponent/Sec2/Sec2';
-import Sec3 from './subComponent/Sec3/Sec3';
-import Sec4 from './subComponent/Sec4/Sec4';
 import Collector from './subComponent/Collector.jsx';
 class App extends Component {
   

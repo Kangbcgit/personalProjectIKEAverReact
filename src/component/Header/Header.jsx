@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import styles from './Header.module.scss'
+import { Link } from 'react-router-dom'
 
 class Header extends Component {
   constructor(props) {
@@ -143,7 +144,7 @@ class Header extends Component {
               <a href="#none">혜택</a>
             </div>
             <a href="#none">홈 액세서리</a>
-            <a href="#none">서비스</a>
+              <Link to='./sub'>아이디어</Link>
           </div>
           <a href="index.html" className={styles.wrapLogo}>
             IKEA
