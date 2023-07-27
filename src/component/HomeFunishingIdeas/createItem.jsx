@@ -8,7 +8,6 @@ class CreateItem extends Component {
       isHoverSpotOn: false,
     };
   }
-
   on() {
     this.setState({ activeStatus: true });
   }
@@ -34,7 +33,7 @@ class CreateItem extends Component {
         onMouseOver={(e) => this.on()}
         onMouseLeave={(e) => this.off()}
       >
-        <img src={this.props.src}/>
+        <img src={this.props.src} alt='img' />
         <div
           className={`${this.props.spotInfo} ${
             this.state.isHoverSpotOn ? this.props.active : ""

@@ -108,10 +108,9 @@
         left: 50%;
         bottom: 10%;
         transform: translateX(-50%);
-        grid-template-columns: repeat(3,1fr);
-        grid-template-areas: 'first . third'
-                              '. second .'
-                              '. . .';
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 'first second'
+                              'third third';
 
         .button {
           height: 75px;

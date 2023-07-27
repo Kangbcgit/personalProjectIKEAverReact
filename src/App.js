@@ -9,6 +9,50 @@ import Footer from './component/Footer/Footer.jsx';
 import { Component } from 'react';
 import Collector from './subComponent/Collector.jsx';
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrollLock: true,
+      currentScrollY: 0,
+    };
+  }
+
+  // componentDidMount () {
+  //   window.addEventListener('wheel', this.scrollLock, { passive : false })
+  // }
+  // componentWillUnmount () {
+  //   window.removeEventListener('wheel', this.scrollLock, { passive : false })
+  // }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(prevState.currentScrollY !== this.state.currentScrollY) {
+
+  //   }
+  // }
+  
+  // scrollLock = (e) => {
+  //   if (this.state.scrollLock == true) {
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //     if (e.deltaY > 0) {
+  //       this.calcCurruntY(true)
+  //     } else if (e.deltaY < 0) {
+  //       this.calcCurruntY(false)
+  //     }
+  //   }
+  // }
+  // calcCurruntY = (boolean) => {
+  //   if(boolean) {
+  //     this.setState(prevState => 
+  //       ({currentScrollY: prevState.currentScrollY + 100})
+  //     );
+  //       console.log(this.state.currentScrollY);
+  //   } else {
+  //     this.setState(prevState => 
+  //       ({currentScrollY: prevState.currentScrollY - 100})
+  //     );
+  //   }
+  // }
   
   render () {
     return (

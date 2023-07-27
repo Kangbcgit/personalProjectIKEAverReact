@@ -13,6 +13,7 @@ class HomeFunishingIdeas extends Component {
   }
   componentDidMount () {
     window.addEventListener('resize', this.resizeEvent);
+    this.resizeEvent();
     const newItems = [],
           newPosition = [];
     for (let i = 1; i <= 12; i++) {

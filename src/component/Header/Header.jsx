@@ -9,13 +9,14 @@ class Header extends Component {
       isHeaderActive: false,
       isHeaderHide: false,
       isBurgerActive: false,
+      currentAccordion: false,
     }
   }
   
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     window.addEventListener('wheel', this.handleHide);
-    this.headerOn();
+    this.handleScroll();
   }
 
   componentWillUnmount() {
@@ -25,6 +26,10 @@ class Header extends Component {
 
   handleScroll = () => {
     const scrollY = window.scrollY;
+    if (this.props.sub === true) {
+      this.headerOn();
+      return;
+    }
     if (scrollY >= 90) {
       this.headerOn();
     } else {
@@ -41,16 +46,23 @@ class Header extends Component {
       this.headerUnHide();
     }
   };
+
   
   headerOn = () => {
     this.setState({ isHeaderActive: true });
   };
 
   headerOff = () => {
-    if (!(window.scrollY) >= 90 && this.props.sub !== true) {
-      this.setState({ isHeaderActive: false });
+    if (this.props.sub !== true) {
+      if (!(window.scrollY >= 90)) {
+        this.setState({ isHeaderActive: false });
+      }
     }
   };
+  /* 
+    click 이벤트 로 handler 함수 발동
+    hanlder함수는 this.state.currentAtag 의 값을 현재 누른 녀석으로 바꿈.
+  */
 
   headerHide = () => {
     this.setState({ isHeaderHide: true });
@@ -76,6 +88,13 @@ class Header extends Component {
       this.setState({isBurgerActive: false});
     }
   }
+  accordionHandler = (e) => {
+    if(this.state.currentAccordion == e.currentTarget) {
+      this.setState({currentAccordion: false});
+    } else {
+      
+    }
+  }
 
   render () {
     return (
@@ -86,7 +105,7 @@ class Header extends Component {
               <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
             <div className={styles.burgerMenu}>
-                <a href="#none">모든 제품</a>
+                <a href="#none" className='title' onClick={this.accordionHandler}>모든 제품</a>
                 <div className={styles.accordion}>
                   <a href="#none">신제품</a>
                   <a href="#none">베스트셀러</a>
@@ -94,10 +113,18 @@ class Header extends Component {
                   <a href="#none">할인 중</a>
                   <a href="#none">테마별 제품 보기</a>
                   <a href="#none">지속가능한 제품 보기</a>
-                  <a href="#none">공간별 쇼핑하기</a>
                 </div>
+                <a href="#none" className='title'>공간별 쇼핑하기</a>
                 <div className={styles.accordion}>
-                  
+                  <a href="#none">침실</a>
+                  <a href="#none">거실</a>
+                  <a href="#none">주방</a>
+                  <a href="#none">홈오피스</a>
+                  <a href="#none">다이닝</a>
+                  <a href="#none">욕실</a>
+                  <a href="#none">현관</a>
+                  <a href="#none">세탁실</a>
+                  <a href="#none">야외공간</a>
                 </div>
                 <a href="#none">혜택</a>
                 <div className={styles.accordion}>
@@ -107,7 +134,7 @@ class Header extends Component {
                 <div className={styles.accordion}>
                   
                 </div>
-                <a href="#none">서비스</a>
+                <Link to='./sub'>아이디어</Link>
                 <div className={styles.accordion}>
                   
                 </div>
