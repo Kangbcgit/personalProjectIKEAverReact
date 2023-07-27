@@ -25,6 +25,7 @@
     grid-auto-rows: 600px;
     gap: 20px;
 
+    padding: 0 20px;
     max-width: 1500px;
     margin: 0 auto;
 
@@ -80,14 +81,31 @@
           left: 0;
           top: 0;
           transform: translateX(-50%);
-          width: 300px;
+          width: 200px;
           height: 150px;
+          padding: 5px;
           background: #fff;
-          border: 1px solid #000;
+          box-shadow: 0 5px 10px 1px #00000060;
 
           opacity: 0;
           pointer-events: none;
           transition: .3s;
+
+          display: flex;
+          flex-flow: column;
+
+          h4 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            font-family: kakaoSmall;
+          }
+          p {
+            text-align: center;
+            font-family: kakaoBig;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 auto;
+          }
         }
 
         &::before {
@@ -195,7 +213,7 @@
       font-size: 3rem; 
     }
     .wrapIdeas {
-      width: 90%;
+      width: 100%;
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: 400px;
       overflow: visible;

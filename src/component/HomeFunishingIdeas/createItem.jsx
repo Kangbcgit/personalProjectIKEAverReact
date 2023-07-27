@@ -33,7 +33,7 @@ class CreateItem extends Component {
         onMouseOver={(e) => this.on()}
         onMouseLeave={(e) => this.off()}
       >
-        <img src={this.props.src} alt='img' />
+        <img src={this.props.src} alt="img" />
         <div
           className={`${this.props.spotInfo} ${
             this.state.isHoverSpotOn ? this.props.active : ""
@@ -50,10 +50,15 @@ class CreateItem extends Component {
             top: `calc(${this.props.top}% + 30px)`,
             left: `calc(${this.props.left}% + 15px)`,
           }}
+          onMouseOver={() => this.spotHover()}
+          onMouseLeave={() => this.spotLeave()}
         >
           <h4>상품 이름입니다.</h4>
           <hr />
-          <p>상품의 설명 공간입니다.</p>
+          <p>
+            상품의 설명 공간입니다. 해당 상품의 데이터를 받아오면 이곳에
+            표시됩니다.
+          </p>
         </div>
       </a>
     );

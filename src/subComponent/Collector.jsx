@@ -24,10 +24,16 @@ export default class Collector extends Component {
 
   componentDidMount() {
     window.addEventListener("wheel", this.throttledTransformPages);
+    window.addEventListener("touchstart", this.transformPages);
+    window.addEventListener("touchmove", this.transformPages);
+    window.addEventListener("touchend", this.transformPages);
   }
 
   componentWillUnmount() {
     window.removeEventListener("wheel", this.throttledTransformPages);
+    window.removeEventListener("touchstart", this.transformPages);
+    window.removeEventListener("touchmove", this.transformPages);
+    window.removeEventListener("touchend", this.transformPages);
   }
 
   transformPages = (e) => {
