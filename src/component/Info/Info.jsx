@@ -6,15 +6,18 @@ class Info extends Component {
     super(props);
     this.state = {
       isResize: false,
+      currentInfoAni: false,
     };
   }
 
   componentDidMount() {
     this.innerCheck();
     window.addEventListener("resize", this.innerCheck);
+    window.addEventListener("scroll", this.infoAni);
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.innerCheck);
+    window.addEventListener("scroll", this.infoAni);
   }
 
   innerCheck = () => {
@@ -34,9 +37,25 @@ class Info extends Component {
     return str;
   };
 
+  infoAni = () => {
+    let info = document.querySelector(`.${styles.info}`);
+    console.log(info);
+    let infoTop = info.getBoundingClientRect().top;
+    if (
+      infoTop + window.innerHeight >= 0 &&
+      this.state.currentInfoAni == false
+    ) {
+      this.setState({ currentInfoAni: !this.state.currentInfoAni });
+    }
+  };
+
   render() {
     return (
-      <section className={`${styles.info} info`}>
+      <section
+        className={`${styles.info} info ${
+          this.state.currentInfoAni ? styles.active : ""
+        }`}
+      >
         <div className={styles.wrapText}>
           <h2>IKEA의 비전</h2>
           <p>{this.hardCoding()}</p>

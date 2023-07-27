@@ -8,6 +8,25 @@
   // min-height: 969px;
   background: #fff;
 
+  &.active {
+    .wrapText {
+      >h2 {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 1.5s ease-out, transform 1s ease-out;
+      }
+      >p {
+        transition: opacity 1.5s ease-out, transform 1s ease-out;
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .wrapButtons {
+        transition: opacity 1.5s ease-out;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
   .wrapText {
     position: relative;
     width: 80%;
@@ -15,19 +34,15 @@
     margin-top: 5rem;
     overflow: hidden;
 
+    
     h2 {
       font-size: 7.5rem;
       font-family: kakaoBig;
       font-weight: 700;
       margin-bottom: clamp(100px, 8.333vw, 160px);
-      /* transform: translateX(-55%); */
+      transform: translateX(-55%);
       color: #1B1B1B;
-      /* opacity: 0; */
-      &.active {
-        opacity: 1;
-        transform: translateX(0);
-        transition: opacity 1.5s ease-out, transform 1s ease-out;
-      }
+      opacity: 0;
     }
 
     p {
@@ -35,14 +50,9 @@
       font-family: kakaoBig;
       font-weight: 700;
       text-align: right;
-      /* transform: translateX(60%); */
+      transform: translateX(60%);
       color: #1B1B1B;
-      /* opacity: 0; */
-      &.active {
-        transition: opacity 1.5s ease-out, transform 1s ease-out;
-        opacity: 1;
-        /* transform: translateX(0); */
-      }
+      opacity: 0;
     }
     .wrapButtons {
       position: absolute;
@@ -56,6 +66,11 @@
       grid-template-columns: repeat(1, 200px);
 
       width: 100%;
+
+      transform: translateY(40%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.5s ease-out, transform 1s ease-out;
       .button {
         display: flex;
         align-items: center;

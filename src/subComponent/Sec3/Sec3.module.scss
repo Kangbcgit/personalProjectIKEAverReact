@@ -10,7 +10,48 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  &.active {
+    >div {
+      &.left {
+        .wrapText {
+          >h3 {
+            animation: startGrid 1.5s .3s forwards;
+          }
+          >p {
+            animation: startGrid 1.5s .4s forwards;
+          }
+          >.button {
+            animation: startGrid 1.5s .5s forwards;
+          }
+        }
+      }
+      &.right {
+        .wrapBox {
+          >div {
+            &.box1 {
+              animation: startGrid 1.5s .5s forwards;
+            }
 
+          &.box2 {
+            animation: startGrid 1.5s .6s forwards;
+          }
+          &.box3 {
+            animation: startGrid 1.5s .7s forwards;
+          }
+
+          &.box4 {
+            animation: startGrid 1.5s .8s forwards;
+          }
+
+          &.box5 {
+            animation: startGrid 1.5s .9s forwards;
+          }
+            
+          }
+        }
+      }
+    }
+  }
   >div {
     width: 100%;
     height: 100%;
@@ -27,6 +68,9 @@
         align-items: center;
         gap: 20px;
         font-family: kakaoBig;
+        >* {
+          opacity: 0;
+        }
 
         >h3 {
           font-size: clamp(50px, 3.6458vw, 70px);
@@ -72,6 +116,7 @@
           border-radius: 25px;
           overflow: hidden;
           box-shadow: 0 5px 10px 0px #00000062;
+          opacity: 0;
 
           >img {
             width: 100%;
@@ -118,6 +163,28 @@
     }
   }
 }
+
+@keyframes startGrid{
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes centerStart {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 0%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
 
 @media (max-width:768px) {
   .wrapper {
