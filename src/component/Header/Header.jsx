@@ -18,7 +18,6 @@ class Header extends Component {
     window.addEventListener("wheel", this.handleHide);
     window.addEventListener("resize", this.resizeBurgerClear);
     window.addEventListener("wheel", this.wheelLock, { passive: false });
-    this.headerOn();
   }
 
   componentWillUnmount() {

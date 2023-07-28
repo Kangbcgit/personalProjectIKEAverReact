@@ -9,7 +9,7 @@ footer {
   .wrapper {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    column-gap: 400px;
+    column-gap: clamp(100px, 20.8333vw, 400px);
     max-width: 1500px;
     margin: 0 auto;
 
@@ -32,6 +32,7 @@ footer {
     
     .first {
       position: relative;
+      min-width: 480px;
       
       .firstBottom {
         line-height: 1.6;
@@ -68,6 +69,7 @@ footer {
         display: flex;
         gap: 10px;
         text-decoration: underline;
+        min-width: 480px;
       }
       .secondBottom {
         display: grid;

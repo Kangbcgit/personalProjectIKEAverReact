@@ -62,7 +62,7 @@ class App extends Component {
             path="/"
             element={
               <>
-                <Header />
+                <Header sub={false}/>
                 <MainBanner />
                 <Info />
                 <HomeFunishingIdeas />

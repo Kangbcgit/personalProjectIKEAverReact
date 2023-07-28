@@ -47,7 +47,7 @@ class CreateItem extends Component {
         <div
           className={this.props.itemInfo}
           style={{
-            top: `calc(${this.props.top}% + 30px)`,
+            top: `calc(${this.props.top}% + 40px)`,
             left: `calc(${this.props.left}% + 15px)`,
           }}
           onMouseOver={() => this.spotHover()}

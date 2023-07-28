@@ -79,10 +79,10 @@
         &+.itemInfo {
           position: absolute;
           left: 0;
-          top: 0;
-          transform: translateX(-50%);
-          width: 200px;
-          height: 150px;
+          top: 10px;
+          transform: translateX(-80%);
+          width: 120px;
+          height: 100px;
           padding: 5px;
           background: #fff;
           box-shadow: 0 5px 10px 1px #00000060;
@@ -95,16 +95,15 @@
           flex-flow: column;
 
           h4 {
-            font-size: 1.5rem;
+            font-size: .8rem;
             font-weight: normal;
             font-family: kakaoSmall;
           }
           p {
-            text-align: center;
             font-family: kakaoBig;
-            font-size: 1.2rem;
+            font-size: .5rem;
             font-weight: bold;
-            margin: 0 auto;
+            margin: auto;
           }
         }
 
